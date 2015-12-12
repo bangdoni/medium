@@ -38,10 +38,8 @@ class ProductController extends Controller
         return view('product.index', compact('products'));
     }
 
-    public function edit(Request $request, $id)
+    public function edit(Request $request, Product $product)
     {
-        $product = Product::find($id);
-
         if ($request->isMethod('get')) {
             // menampilkan form
             return view('product.create', compact('product'));
